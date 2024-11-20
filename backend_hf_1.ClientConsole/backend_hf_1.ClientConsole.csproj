@@ -11,4 +11,8 @@
     <ProjectReference Include="..\backend_hf_1\backend_hf_1.Endpoint.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
 </Project>
