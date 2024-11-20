@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend_hf_1.Entities", "ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend_hf_1.Logic", "backend_hf_1.Logic\backend_hf_1.Logic.csproj", "{D923773D-8747-4315-85AF-1A08AA03CD85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend_hf_1.ClientConsole", "backend_hf_1.ClientConsole\backend_hf_1.ClientConsole.csproj", "{B96306D0-FF5C-4D5C-9301-F6E24ADDE944}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D923773D-8747-4315-85AF-1A08AA03CD85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D923773D-8747-4315-85AF-1A08AA03CD85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D923773D-8747-4315-85AF-1A08AA03CD85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B96306D0-FF5C-4D5C-9301-F6E24ADDE944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B96306D0-FF5C-4D5C-9301-F6E24ADDE944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B96306D0-FF5C-4D5C-9301-F6E24ADDE944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B96306D0-FF5C-4D5C-9301-F6E24ADDE944}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
