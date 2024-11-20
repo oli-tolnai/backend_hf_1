@@ -25,7 +25,14 @@ namespace backend_hf_1.Endpoint.Controllers
             logic.AddDanubeLevel(dto);
         }
 
-        
-        
+        [HttpGet]
+        public IEnumerable<DanubeLevel> GetDanubeLevels()
+        {
+            return logic.GetDanubeLevels();
+        }
+
+
+
+
     }
 }

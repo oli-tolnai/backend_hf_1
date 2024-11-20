@@ -24,12 +24,15 @@ namespace backend_hf_1.Logic
             else
             {
                 //TODO: Implement exception handling
-                //throw new System.Exception("There is already a record for this date");
+                throw new ArgumentException("There is already a record for this date");
             }
-
-
         }
 
+        public IEnumerable<DanubeLevel> GetDanubeLevels()
+        {
+            var c =  repo.GetAll();
+            return c;
+        }
 
     }
 }
