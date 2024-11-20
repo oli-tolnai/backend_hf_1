@@ -9,18 +9,21 @@ namespace backend_hf_1.Endpoint.Controllers
     [ApiController]
     public class DanubeLevelController : ControllerBase
     {
-        DanubeLevelDbContext ctx;
 
-        public DanubeLevelController(DanubeLevelDbContext ctx)
+        Repository<DanubeLevel> repo;
+
+        public DanubeLevelController(Repository<DanubeLevel> repo)
         {
-            this.ctx = ctx;
+            this.repo = repo;
         }
 
         [HttpPost]
         public void AddDanubeLevel(DanubeLevel danubeLevel)
         {
-            ctx.DanubeLevels.Add(danubeLevel);
-            ctx.SaveChanges();
+            repo.Create(danubeLevel);
         }
+
+        
+        
     }
 }

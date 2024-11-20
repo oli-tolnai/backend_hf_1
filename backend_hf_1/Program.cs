@@ -12,6 +12,8 @@ namespace backend_hf_1
 
             // Add services to the container.
 
+            builder.Services.AddTransient(typeof(Repository<>));
+
             builder.Services.AddDbContext<DanubeLevelDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=DanubeLevelDb;Trusted_Connection=True;TrustServerCertificate=True");

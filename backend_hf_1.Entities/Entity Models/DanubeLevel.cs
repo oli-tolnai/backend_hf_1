@@ -1,4 +1,5 @@
-﻿using System;
+﻿using backend_hf_1.Entities.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace backend_hf_1.Entities.Entity_Models
 {
-    public class DanubeLevel
+    public class DanubeLevel : IIdEntity
     {
         public DanubeLevel(DateTime date, int value)
         {
