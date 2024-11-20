@@ -1,6 +1,7 @@
 ﻿using backend_hf_1.Data;
 using backend_hf_1.Entities.Dtos;
 using backend_hf_1.Entities.Entity_Models;
+using backend_hf_1.Logic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace backend_hf_1.Endpoint.Controllers
@@ -11,18 +12,17 @@ namespace backend_hf_1.Endpoint.Controllers
     public class DanubeLevelController : ControllerBase
     {
 
-        Repository<DanubeLevel> repo;
+        DanubeLevelLogic logic;
 
-        public DanubeLevelController(Repository<DanubeLevel> repo)
+        public DanubeLevelController(DanubeLevelLogic logic)
         {
-            this.repo = repo;
+            this.logic = logic;
         }
 
         [HttpPost]
         public void AddDanubeLevel(DanubeLevelCreateDto dto)
         {
-            var d = new DanubeLevel(dto.Date, dto.Value);
-            repo.Create(d);
+            logic.AddDanubeLevel(dto);
         }
 
         
