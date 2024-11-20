@@ -1,5 +1,6 @@
 
 using backend_hf_1.Data;
+using backend_hf_1.Logic;
 using Microsoft.EntityFrameworkCore;
 
 namespace backend_hf_1
@@ -13,6 +14,7 @@ namespace backend_hf_1
             // Add services to the container.
 
             builder.Services.AddTransient(typeof(Repository<>));
+            builder.Services.AddTransient<DanubeLevelLogic>();
 
             builder.Services.AddDbContext<DanubeLevelDbContext>(options =>
             {
