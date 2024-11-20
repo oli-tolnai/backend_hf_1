@@ -16,7 +16,18 @@ namespace backend_hf_1.Logic
         public void AddDanubeLevel(DanubeLevelCreateDto dto)
         {
             DanubeLevel d = new DanubeLevel(dto.Date, dto.Value);
-            repo.Create(d);
+
+            if (repo.GetAll().FirstOrDefault(x => x.Date.Date == d.Date.Date) == null) 
+            {
+                repo.Create(d);
+            }
+            else
+            {
+                //TODO: Implement exception handling
+                //throw new System.Exception("There is already a record for this date");
+            }
+
+
         }
 
 
