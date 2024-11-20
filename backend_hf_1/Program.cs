@@ -1,4 +1,7 @@
 
+using backend_hf_1.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace backend_hf_1
 {
     public class Program
@@ -8,6 +11,11 @@ namespace backend_hf_1
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddDbContext<DanubeLevelDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=DanubeLevelDb;Trusted_Connection=True;TrustServerCertificate=True");
+            });
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
