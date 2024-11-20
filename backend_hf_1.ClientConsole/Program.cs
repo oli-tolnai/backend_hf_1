@@ -15,63 +15,22 @@ namespace backend_hf_1.ClientConsole
         static void Main(string[] args)
         {
             var data = JsonIntoDb(PathInput());
-
+            
             var connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=DanubeLevelDb;Trusted_Connection=True;TrustServerCertificate=True";
             var optionsBuilder = new DbContextOptionsBuilder<DanubeLevelDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
 
-            using (var context = new DanubeLevelDbContext(optionsBuilder.Options))
+            var controller = new DanubeLevelController(new DanubeLevelLogic(new Repository<DanubeLevel>(new DanubeLevelDbContext(optionsBuilder.Options))));
+            foreach (var item in data)
             {
-                // Adatok feltöltése az adatbázisba
-                //data list összes adata feltöltése az adatbázisba
-                foreach (var item in data)
-                {
-                    DanubeLevel danubeLevels = new DanubeLevel(item.Date, item.Value);
-                    context.Add(danubeLevels);
-                }
-                context.SaveChanges();
-
-                /* 
-                var danubeLevel = new DanubeLevel(data[0].Date, data[0].Value);
-                context.Add(danubeLevel);
-                context.SaveChanges();*/
-
-                Console.WriteLine("Adatok sikeresen mentve az adatbázisba.");
+                controller.AddDanubeLevel(item);
             }
-            
-
-
-
-            /*
-            var host = Host.CreateDefaultBuilder()
-                    .ConfigureServices((hostContext, services) =>
-                    {
-                        services.AddDbContext<DanubeLevelDbContext>(options =>
-                            options.UseSqlServer("\"Server=(localdb)\\\\MSSQLLocalDB;Database=DanubeLevelDb;Trusted_Connection=True;TrustServerCertificate=True\""));
-                        services.AddScoped<DanubeLevelDbContext>();
-                        services.AddTransient<Repository<DanubeLevel>>();
-                        services.AddTransient<DanubeLevelLogic>();
-                        services.AddTransient<DanubeLevelController>();
-
-                    })
-                    .Build();
-            host.Start();
-
-            using IServiceScope serviceScope = host.Services.CreateScope();
-
-            var controller = host.Services.GetRequiredService<DanubeLevelController>();
-            
-            
-            controller.AddDanubeLevel(data[0]);
-            */
         }
 
         public static List<DanubeLevelCreateDto> JsonIntoDb(string path)
         {
             string jsonString = File.ReadAllText(path);
-            //Console.WriteLine(jsonString);
-
-            //deserialize jsonString into a list of DanubeLevelCreateDto            
+        
             List<DanubeLevelCreateDto> danubeLevelData = JsonConvert.DeserializeObject<List<DanubeLevelCreateDto>>(jsonString);
 
             return danubeLevelData;
