@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -26,6 +27,7 @@ namespace backend_hf_1.Entities.Entity_Models
 
 
         [JsonPropertyName("date")]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
         [JsonPropertyName("value")]
