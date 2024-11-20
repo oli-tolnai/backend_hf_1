@@ -23,10 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\backend_hf_1.Data\backend_hf_1.Data.csproj" />
     <ProjectReference Include="..\backend_hf_1.Entities\backend_hf_1.Entities.csproj" />
     <ProjectReference Include="..\backend_hf_1.Logic\backend_hf_1.Logic.csproj" />

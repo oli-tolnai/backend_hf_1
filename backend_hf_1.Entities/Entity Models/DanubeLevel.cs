@@ -32,4 +32,6 @@ namespace backend_hf_1.Entities.Entity_Models
         public int Value { get; set; }
   
     }
+
+
 }
