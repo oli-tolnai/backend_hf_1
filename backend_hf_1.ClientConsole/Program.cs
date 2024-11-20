@@ -25,6 +25,7 @@ namespace backend_hf_1.ClientConsole
             {
                 controller.AddDanubeLevel(item);
             }
+            Console.WriteLine("Data was successfully added to the database");
         }
 
         public static List<DanubeLevelCreateDto> JsonIntoDb(string path)

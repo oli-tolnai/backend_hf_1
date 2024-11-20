@@ -8,13 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="duna2012.json" />
+    <None Remove="JsonFiles\duna2012.json" />
     <None Remove="JsonFiles\duna2016.json" />
     <None Remove="JsonFiles\duna2024.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="JsonFiles\duna2012.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="JsonFiles\duna2016.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="JsonFiles\duna2024.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
