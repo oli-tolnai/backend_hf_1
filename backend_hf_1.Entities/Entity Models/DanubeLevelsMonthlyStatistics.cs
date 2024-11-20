@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace backend_hf_1.Entities.Dtos
 {
-    public class DanubeLevelViewDto
+    public class DanubeLevelsMonthlyStatistics
     {
-        public DanubeLevelViewDto(string date, double average_value, int minimal_value, int maximal_value)
+        public DanubeLevelsMonthlyStatistics(string month, double average_value, int minimal_value, int maximal_value)
         {
-            Date = date;
+            Month = month;
             Average_value = average_value;
             Minimal_value = minimal_value;
             Maximal_value = maximal_value;
         }
 
-        public string Date { get; set; } 
+        public string Month { get; set; } 
 
         [DisplayName("avarage:value")]
         public double Average_value { get; set; }
@@ -25,7 +25,7 @@ namespace backend_hf_1.Entities.Dtos
         [DisplayName("minimal_value")]
         public int Minimal_value { get; set; }
 
-        [DisplayName("Maximal_value")]
+        [DisplayName("maximal_value")]
         public int Maximal_value { get; set; }
 
     }

@@ -13,5 +13,7 @@ namespace backend_hf_1.Entities.Dtos
         public required DateTime Date { get; set; }
 
         public required int Value { get; set; }
+
+
     }
 }

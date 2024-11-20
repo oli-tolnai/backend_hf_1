@@ -26,9 +26,9 @@ namespace backend_hf_1.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<DanubeLevelViewDto> GetDanubeLevels()
+        public IEnumerable<DanubeLevelsMonthlyStatistics> GetDanubeLevels()
         {
-            return logic.DanubeLevelsMonthlyStatistics();
+            return logic.GetDanubeLevelsMonthlyStatistics();
         }
 
 

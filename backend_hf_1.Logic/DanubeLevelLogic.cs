@@ -28,13 +28,13 @@ namespace backend_hf_1.Logic
             }
         }
 
-        public IEnumerable<DanubeLevelViewDto> DanubeLevelsMonthlyStatistics()
+        public IEnumerable<DanubeLevelsMonthlyStatistics> GetDanubeLevelsMonthlyStatistics()
         {
             ;
             var orderedDatas =  repo.GetAll().OrderBy(x => x.Date.Date);
             // order by date
             //var orderedData = allData.OrderBy(x => x.Date.Date);
-            List<DanubeLevelViewDto> result = new List<DanubeLevelViewDto>();
+            List<DanubeLevelsMonthlyStatistics> result = new List<DanubeLevelsMonthlyStatistics>();
             int db = -1;
             int sum = 0;
             int sameMonthCount = 0;
@@ -42,9 +42,9 @@ namespace backend_hf_1.Logic
             {
                 //while the date is the same year and month we add the value to the sum and check if it is the min or max value
                 //if the date is different we add the average, min and max value to the list and start a new month
-                if (db == -1 || result[db].Date != data.Date.ToString("yyyy.MM"))
+                if (db == -1 || result[db].Month != data.Date.ToString("yyyy.MM"))
                 {
-                    result.Add(new DanubeLevelViewDto(data.Date.ToString("yyyy.MM"), data.Value, data.Value, data.Value));
+                    result.Add(new DanubeLevelsMonthlyStatistics(data.Date.ToString("yyyy.MM"), data.Value, data.Value, data.Value));
                     sum = data.Value;
                     sameMonthCount = 1;
                     db++;
