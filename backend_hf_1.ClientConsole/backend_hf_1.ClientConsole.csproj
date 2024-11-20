@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\backend_hf_1.Data\backend_hf_1.Data.csproj" />
     <ProjectReference Include="..\backend_hf_1\backend_hf_1.Endpoint.csproj" />
   </ItemGroup>
 
