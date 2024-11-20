@@ -16,6 +16,7 @@ namespace backend_hf_1.Entities.Entity_Models
             Level = level;
         }
 
+
         public string Id { get; set; }
         public DateTime Date { get; set; }
         public int Level { get; set; }
