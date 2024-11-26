@@ -9,20 +9,20 @@
 
   <ItemGroup>
     <None Remove="duna2012.json" />
-    <None Remove="JsonFiles\duna2012.json" />
-    <None Remove="JsonFiles\duna2016.json" />
-    <None Remove="JsonFiles\duna2024.json" />
+    <None Remove="JF\d12.json" />
+    <None Remove="JF\d16.json" />
+    <None Remove="JF\d24.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="JsonFiles\duna2012.json">
+    <Content Include="JF\d12.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="JsonFiles\duna2016.json">
+    <Content Include="JF\d16.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="JsonFiles\duna2024.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="JF\d24.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
